@@ -1,0 +1,238 @@
+    /*23.google web fonts지정*/
+    @import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+    @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200;400;500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=East+Sea+Dokdo&family=Racing+Sans+One&family=Russo+One&display=swap');
+    .bo{
+        border:1px solid red;
+    }
+    body{
+        font-family: 'Jeju Gothic','Saira Condensed', sans-serif;
+        height: 100vh;
+    }
+    :root{
+       --gold : #F69F00; 
+       --black : black;
+       --orange :#D09C35;
+       --white:white;
+    }
+    /*5.캐로셀 안의 이미지 사이즈를 동일하게 맞추거나 화면높이에 이미지 높이 맞추기위해 img태그를 삭제하고 .carousel-item에 이미지를 css로 넣고 코딩으로 사이즈를 맞추기*/
+
+    /*10.캐로셀 밖으로 인디케이터 흘러 넘쳐도 숨겨서 스크롤 생기지 않도록 설정*/
+    #topCarousel{
+        overflow: hidden;
+    }
+    #topCarousel .carousel-item:nth-of-type(1){
+        background: url(../img/carousel_01.jpg) no-repeat center / cover;
+        height: 100vh;
+    }
+    #topCarousel .carousel-item:nth-of-type(2){
+        background: url(../img/carousel_02.jpg) no-repeat center / cover;
+        height: 100vh;
+    }
+    #topCarousel .carousel-item:nth-of-type(3){
+        background: url(../img/carousel_03.jpg) no-repeat center / cover;
+        height: 100vh;
+    }
+    /*7.캐로셀 안에 캡션대신 넣은 이미지 위치 맞추기*/
+    #topCarousel .carousel-caption{
+        /*border:3px solid red;*/
+        position: absolute;
+    }
+    #topCarousel .carousel-item:nth-of-type(1) .carousel-caption{
+        bottom: 0px;
+    }
+    #topCarousel .carousel-item:nth-of-type(2) .carousel-caption{
+        bottom: 50px;
+    }
+    #topCarousel .carousel-item:nth-of-type(3) .carousel-caption{
+        bottom: 25px;
+    }
+    #topCarousel .carousel-item .carousel-caption .text_lg img{
+        position: relative;
+        top: 20px;
+        
+        
+        /*border: 1px solid blue;*/
+        
+    }
+    #topCarousel .carousel-item .carousel-caption .text_1{
+        position: relative;
+        top: -15px;
+        color:var(--orange);
+    }
+    #topCarousel .carousel-item .carousel-caption .text_2{
+        position: relative;
+        top: -55px;
+        color:var(--orange);
+    }
+    #topCarousel .carousel-item .carousel-caption .text_3{
+        position: relative;
+        top: -70px;
+        /*border: 1px solid blue;*/
+        color:var(--orange);
+    }
+    #topCarousel .carousel-item .carousel-caption .font_01{
+        position: relative;
+        top: 0px;
+    }
+    .main_btns{
+        position: relative;
+        top: 10px;
+    }
+    /*8.캐로셀 배경 이미지를 어둡게 하여 위의 이미지 컨텐츠 부각시키기*/
+    #topCarousel .carousel-item::after{
+        content: "" ;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        opacity: 0.5
+    }
+    /*캐로셀 좌우 버튼을 활성화*/
+    #topCarousel .carousel-control-next{
+        right:-200px;
+        transition: right 1s;
+    }
+    #topCarousel .carousel-control-prev{
+        left:-200px;
+        transition: left 1s;
+    }
+    #topCarousel:hover .carousel-control-next{
+        right:0px;
+    }
+    #topCarousel:hover .carousel-control-prev{
+        left:0px;
+    }
+    /*캐로셀 좌우 버튼 호버시 색상 */
+    #topCarousel .carousel-control-next:hover, 
+    #topCarousel .carousel-control-prev:hover{
+        color:var(--orange);
+    }
+    /*캐로셀 하단 인디케이터 버튼 활성화시 스타일*/
+    #topCarousel .carousel-indicators .active{
+        background-color:var(--orange);
+    }
+    /*16.loading img 위치 잡기*/
+    .loading .d-flex img{
+        /*border:2px solid red;*/
+        position: absolute;
+        top:50%;
+        width: 200px;
+        margin-top: -48px;
+        transform: scale(0.8);
+    }
+    .loading{
+        height: 100vh;
+        border:1px solid;
+    }
+    /*21.navbar 배경색 customize*/
+    .bg-black{
+        background-color: var(--black);
+    }
+    /*25.네브바의 height 설정하고 txt의 스타일 변경*/
+    .navbar-nav .nav-link{
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link{
+            color:var(--orange);
+    }
+    .navbar-dark .navbar-nav .nav-link{
+        color:var(--white);
+    }
+    
+    /*29.세번째 메뉴의 배경이미지*/
+    section#secret{
+        background: url(../img/menu3_about_bg.jpg) no-repeat center / cover fixed;
+        padding: 80px;
+    }
+    /*34.scrollspy를 위한 설정*/
+    body {
+      position: relative;
+    }
+    /*39.윈도우 창에 가로스크롤 생기는 부분 처리*/
+    html,body{
+        overflow-x: hidden;
+    }
+    /*42.다섯번째 메뉴의 배경이미지*/
+    section#cf, #community{
+        padding: 80px;
+    }
+    /*64.waypoint가 작동하기 전 원하는 요소들을 보이지 않도록 설정*/
+    .wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7{
+        visibility: hidden;
+    }
+    .animate__animated{
+        visibility: visible;
+    }
+    
+    section#custom, #allstar{
+        background: url(../img/bg_allstars.jpg) no-repeat center / cover fixed;
+        padding: 80px;
+    }
+    
+
+    /*폰트 스타일*/
+    .font_01{
+        /*font-family: 'East Sea Dokdo', cursive;*/
+        font-family: 'Black Han Sans', sans-serif;
+        font-size: 1.8em;
+    }
+    .font_02{
+        font-family: 'Racing Sans One', cursive;
+        /*font-family: 'Russo One', sans-serif;*/
+        font-size: 3.5em;
+
+    }
+    .pb-10{
+        padding-bottom: 100px;
+    }
+    .pb-5{
+        padding-bottom: 50px;
+    }
+    .pl-5{
+        padding-left: 50px;
+    }
+    .pr-5{
+        padding-right: 50px;
+    }
+    li{
+        list-style-type: none;
+        display: list-item;
+        
+    }
+    /*custom css*/
+    .thumbnail:hover{
+        /*background-color: ;*/
+        /*color: black;*/
+        opacity: 0.6;
+    }
+
+    .custom_btns{
+        left: 6%;
+        position: relative;
+
+    }
+    .custom_texts{
+        position: absolute;
+        left: 65px;
+        top: 40px;
+        font-size: 1.5em;
+        color: white;
+    }
+    .allstar_btns{
+        position: relative;
+        right: 10px;
+        bottom: 50px;
+
+    }
+    .copyright{
+        color: gray;
+    }
+    section#community{
+        padding: 80px;
+    }
+    .op70 .hover_01{
+        opacity: 72%
+    }
+    
